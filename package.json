@@ -1,0 +1,33 @@
+{
+  "name": "Kumara-Store",
+  "version": "1.0.0",
+  "description": "Criação de um e-commerce fictício de produtos voltados ao público gamer",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "nunjucks": "^3.2.2",
+    "pg": "^8.3.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.10",
+    "nodemon": "^2.0.4",
+    "npm-run-all": "^4.1.5"
+  },
+  "scripts": {
+    "start": "npm-run-all -p nodemon browsersync",
+    "nodemon": "nodemon src/server.js",
+    "browsersync": "browser-sync start --proxy http://localhost:5000/ --files 'public,src/app/views'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/richard-degra/Kumara-Store.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/richard-degra/Kumara-Store/issues"
+  },
+  "homepage": "https://github.com/richard-degra/Kumara-Store#readme"
+}

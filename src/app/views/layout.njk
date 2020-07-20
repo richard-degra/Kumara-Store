@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        
+         
+       {% block head %}
+        
+        <title>Furinkazan Gym Manager</title>
+
+       {% endblock head %}
+
+    </head>
+
+    <body>
+
+       <link rel='stylesheet' href='/index.css'>
+
+        <header>
+        <div class='links'>
+
+        <a href='/instructors'>Instrutores</a>
+        <a href='/members'>Membros</a>
+
+        </div>
+        
+        </header>     
+         
+         
+         {% block content %}{% endblock content %}      
+   
+     <script src="/scripts.js"></script>
+
+    </body>
+
+</html>
