@@ -1,0 +1,86 @@
+
+:root {
+    --main-color : #FD951F;
+    --sec-color: #1FD4FD
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: MinecraftiaRegular;
+
+}
+
+html,
+body {
+    min-height: 100vh;
+}
+
+body {
+    background: #f9f9f9;
+}
+
+/* HEADER */
+
+header,
+footer {
+    background: black;
+    color: white;
+    width: 100%;
+    padding: 32px 0px;
+    text-align: center;
+}
+
+header div.container {
+    display: grid;
+    grid-template-columns: 220px auto 280px;
+    align-items: center;
+    gap: 24px;
+}
+
+header div.container a {
+    justify-self: start;
+}
+
+/* LOGO */
+
+.logo h1 {
+    color: white;
+    font-size: 36px;
+    line-height: 46px;
+}
+
+.logo h2 {
+    color: var(--main-color);
+    padding: 20px;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 2px;
+}
+
+/* HEADER SEARCH */
+
+.search input {
+    width: 100%;
+    padding: 8px 16px;
+    border-radius: 2px;
+    font-size: 16px;
+
+}
+
+/* MAIN MENU */
+
+nav.primary ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav.primary ul li a {
+    display: flex;
+    align-items: center;
+    color: white;
+}
