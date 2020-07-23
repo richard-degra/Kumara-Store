@@ -2,19 +2,21 @@
 
 {% block content %}
 
-<section class="container form">
+<section class='container form'>
 
     <form method='POST' action='/products'>
 
-       <h3>Cadastro</h3>
+       <div class='header'>
+           <h3>Cadastrar Produto</h3>
+       </div>
 
-       {% include 'products/fields.njk' %}
+       <div class='fields'>
+           {% include 'products/fields.njk' %}
+       </div>
 
-    
+        <button class='button' type='submit'>Cadastrar</button>
     </form>
-
 </section>
-
 
 
 {% endblock content %}
