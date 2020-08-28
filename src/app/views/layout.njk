@@ -10,19 +10,20 @@
 
        {% endblock head %}
 
-     <link rel='stylesheet' media='screen' href='https://fontlibrary.org/face/minecraftia' type='text/css'/> 
-     <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
-     <link rel='stylesheet' href='/index.css'>
+       {% include 'parts/styles.njk' %}  
 
+     
     </head>
 
     <body>
-  
-          {% include 'parts/header.njk' %}         
-         
-         {% block content %}{% endblock content %}
 
-         {% include 'parts/footer.njk' %}       
+        {% include 'parts/messages.njk' %}  
+
+        {% include 'parts/header.njk' %}         
+         
+        {% block content %}{% endblock content %}
+
+        {% include 'parts/footer.njk' %}       
 
     </body>
 

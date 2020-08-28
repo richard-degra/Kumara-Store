@@ -4,6 +4,7 @@
   "description": "Criação de um e-commerce fictício de produtos voltados ao público gamer",
   "main": "index.js",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
     "method-override": "^3.0.0",
     "multer": "^1.4.2",
