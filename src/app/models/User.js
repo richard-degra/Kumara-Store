@@ -1,5 +1,7 @@
 const db = require('../../config/db')
 const { hash } = require('bcryptjs')
+const Product = require('../models/Product')
+const fs = require('fs')
 
 
 module.exports = {
@@ -56,5 +58,58 @@ module.exports = {
             console.error(err)
         }
        
+    },
+
+    async update(id, fields) {
+        let query = 'UPDATE users SET'
+
+        Object.keys(fields).map((key, index, array) => {
+            if((index + 1) < array.length) {
+                query = `${query}
+                    ${key} = '${fields[key]}',
+                `
+            } else {
+                // last iteration //
+
+                query = `${query}
+                ${key} = '${fields[key]}'
+                WHERE id = ${id}
+            `
+            }
+        })
+
+        await db.query(query)
+
+        return
+    },
+
+    async delete(id) {
+        // Pegar todos os produtos //
+        let results = await db.query('SELECT * FROM products WHERE user_id = $1')
+        const products = results.rows
+
+        // Pegar as imagens //
+
+        const allFilesPromise = products.map(product => 
+        Product.files(product.id))
+
+        let promiseResults = await Promise.all(allFilesPromise)
+
+        // Rodar a remoção do usuário //
+
+        await db.query('DELETE FROM users WHERE id = $1', [id])
+
+        // Remover as imagens da public //
+
+        promiseResults.map(results => {
+            results.rows.map(file => {
+                try {
+                 fs.unlinkSync(file.path)   
+                }catch(err) {
+                  console.error(err)
+                }
+            })
+        })
+
     }
 }
