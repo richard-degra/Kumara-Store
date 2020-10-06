@@ -3,3 +3,4 @@ config/
 database.sql
 images/
 .vscode/
+src/lib/mailer.js
